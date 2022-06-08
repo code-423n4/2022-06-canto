@@ -46,8 +46,8 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 ---
 
 # Canto contest details
-- $71,250 main award pot
-- $3,750 gas optimization award pot
+- $35,625 USDC + $35,625 CANTO main award pot
+- $1,875 USDC + $1,875 CANTO gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-canto-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
