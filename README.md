@@ -45,7 +45,7 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ---
 
-# Canto contest details
+# Canto Network contest details
 - $35,625 USDC + $35,625 CANTO main award pot
 - $1,875 USDC + $1,875 CANTO gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
