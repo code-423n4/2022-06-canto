@@ -46,8 +46,8 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 ---
 
 # New Blockchain contest details
-- $35,625 USDC + $35,625 project tokens main award pot
-- $1,875 USDC + $1,875 project tokens gas optimization award pot
+- $35,625 USDC + $35,625 protocol tokens main award pot
+- $1,875 USDC + $1,875 protocol tokens gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-new-blockchain-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
