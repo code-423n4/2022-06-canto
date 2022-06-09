@@ -45,18 +45,18 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ---
 
-# Canto Network contest details
-- $35,625 USDC + $35,625 CANTO main award pot
-- $1,875 USDC + $1,875 CANTO gas optimization award pot
+# New Blockchain contest details
+- $35,625 USDC + $35,625 project tokens main award pot
+- $1,875 USDC + $1,875 project tokens gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-canto-contest/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-new-blockchain-contest/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts June 14, 2022 20:00 UTC
 - Ends June 21, 2022 19:59 UTC
-- Etherium and Cosmos
+- Ethereum and Cosmos
 
 This repo will be made public before the start of the contest. (C4 delete this line when made public)
 
-This contest will be both Etherium and Cosmos leagues 
+This contest will be both Ethereum and Cosmos leagues
 
 [ ⭐️ SPONSORS ADD INFO HERE ]
