@@ -1,0 +1,3 @@
+[submodule "stableswap"]
+	path = stableswap
+	url = git@github.com:Plex-Engineer/stableswap.git
