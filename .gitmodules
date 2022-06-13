@@ -1,3 +1,12 @@
 [submodule "stableswap"]
 	path = stableswap
 	url = git@github.com:Plex-Engineer/stableswap.git
+[submodule "lending-market"]
+	path = lending-market
+	url = git@github.com:Plex-Engineer/lending-market.git
+[submodule "manifest"]
+	path = manifest
+	url = git@github.com:Plex-Engineer/manifest.git
+[submodule "zeroswap"]
+	path = zeroswap
+	url = git@github.com:Plex-Engineer/zeroswap.git
