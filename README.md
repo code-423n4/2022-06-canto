@@ -9,7 +9,7 @@
 - ⚡Ethereum and ⚛Cosmos
 
 # New Blockchain (Manifest)
-### a new EVM enabled Cosmos SDK layer 1
+### A new EVM enabled Cosmos SDK layer 1
 
 # Table of Contents
 1. [Contest Scope](https://github.com/code-423n4/2022-06-newblockchain/blob/main/README.md#contest-scope)
