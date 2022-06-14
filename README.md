@@ -6,7 +6,7 @@
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts June 14, 2022 20:00 UTC
 - Ends June 21, 2022 19:59 UTC
-- ⚡Ethereum and ⚛Cosmos
+- ⚡Ethereum and ⚛Cosmos Leagues
 
 # New Blockchain (Manifest)
 ### A new EVM enabled Cosmos SDK layer 1
