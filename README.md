@@ -8,11 +8,6 @@
 - Ends June 21, 2022 19:59 UTC
 - ⚡Ethereum and ⚛Cosmos
 
-This repo will be made public before the start of the contest. (C4 delete this line when made public)
-
-This contest will be both Ethereum and Cosmos leagues
-
-[ ⭐️ SPONSORS ADD INFO HERE ]
 # New Blockchain (Manifest)
 ### a new EVM enabled Cosmos SDK layer 1
 
