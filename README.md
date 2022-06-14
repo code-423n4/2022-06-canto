@@ -61,7 +61,7 @@ Since Note cannot be created, only borrowed, and the Supply Rate is the same as 
 
 # Cosmos SDK Blockchain
 
-## Unigov Module (sloc 615)
+## Unigov Module (615 sloc)
 
 The unigov module is a wrapper around the Cosmos-sdk x/gov module. The module defines two proposal types (as well as their JSON formats): LendingMarketProposals, TreasuryProposals. The proposals are structured after the Compound-Finance Protocol’s proposal type, that is, each proposal is essentially an array of tuples: (signature, calldata, msg.value). Upon a proposal’s passing, the proposalHandler either deploys the ProposalStore contract (if it is not already deployed) or appends the proposal into the ProposalStore’s mapping ( uint ⇒ Proposal). The Unigov module uses the [evm.Call](http://evm.Call)() method from geth to route/create messages within the EVM. 
 
@@ -125,7 +125,7 @@ The Lending Market is a decentralized money market forked from Compound protocol
 - Responsible for the core business logic of the lending market
 - Identical to Compound except for a modification to the grantCompInternal() function which removes the reference to Comp() and replaces it with a reference to a generic EIP-20 Interface
 
-## Stablecoin:
+## Stablecoin (part of lending market):
 
 - Note is a USDC/USDT soft-pegged stablecoin that is backed by collateral lent to the native lending protocol on New Blockchain. Note is over-collateralized so for every note that is in circulation there is more than 1 USD worth of collateral held in cToken collateral by Lending Market
 - Note has an algorithmically pegged value to USD in the sense that it’s interest rate is derived from the price differential between itself and a designated proxy for USD such as USDC
@@ -145,24 +145,24 @@ The Lending Market is a decentralized money market forked from Compound protocol
 
 ![flowchart](./flowchart.png)
 
-## Accountant
+### Accountant:
 
 On genesis, type(uint).max Note is minted to the Accountant, on borrows/redeems into the cNote Lending Market, the Accountant supplies Note to the cNote contract, receiving cNote in return. On repayBorrows and mints, the Accountant redeems suppliedNote/curExRate cNOTE, and receives the Note it had previously lent to the market. The interest earned on the Note the Accountant lends to the market is swept to the treasury via an external method in Accountant.
 
-#### [AccountantDelegator](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Accountant/AccountantDelegator.sol#:~:text=contract%20AccountantDelegator%20is%20AccountantInterface%2C%20AccountantDelegatorInterface%20%7B) (138 sloc) 
+#### [AccountantDelegator](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Accountant/AccountantDelegator.sol#:~:text=contract%20AccountantDelegator%20is%20AccountantInterface%2C%20AccountantDelegatorInterface%20%7B) (138 sloc) :
 - Handles and delegates calls to the current implementation of AccountantDelegate.
 
-#### [AccountantDelegate](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Accountant/AccountantDelegate.sol#:~:text=contract%20AccountantDelegate%20is%20AccountantInterface%2C%20ExponentialNoError%2C%20TokenErrorReporter%2C%20ComptrollerErrorReporter%7B) (95 sloc)
+#### [AccountantDelegate](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Accountant/AccountantDelegate.sol#:~:text=contract%20AccountantDelegate%20is%20AccountantInterface%2C%20ExponentialNoError%2C%20TokenErrorReporter%2C%20ComptrollerErrorReporter%7B) (95 sloc):
 - handles the core logic of supplying/redeeming Note/cNote in the cNote lending market.
 
-#### [AccountantInterfaces](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Accountant/AccountantInterfaces.sol#:~:text=contract%20AccountantDelegatorStorage%20%7B) (34 sloc)
+#### [AccountantInterfaces](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Accountant/AccountantInterfaces.sol#:~:text=contract%20AccountantDelegatorStorage%20%7B) (34 sloc):
 - Interfaces that AccountantDelegat(e/or) implement. Any future proposed implementation of AccountantDelegate should extend the base AccountantDelegate contract, and should define added functionality as an interface in this file.
 
-## Treasury
+### Treasury:
 
 The treasury receives the interest swept from the Accountant. In maintains a reserve of Note for community use. These funds are dispersed via UniGov Proposals.
 
-#### [TreasuryDelegator](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Treasury/TreasuryDelegator.sol#:~:text=contract%20TreasuryDelegator%20is%20TreasuryDelegatorInterface%2C%20TreasuryInterface%7B) (131 sloc)
+#### [TreasuryDelegator](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Treasury/TreasuryDelegator.sol#:~:text=contract%20TreasuryDelegator%20is%20TreasuryDelegatorInterface%2C%20TreasuryInterface%7B) (131 sloc):
 - Handles and delegates calls to the current implementation of the Treasury.
 
 #### [TreasuryDelegate](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Treasury/TreasuryDelegate.sol#:~:text=contract%20TreasuryDelegate%20is%20TreasuryInterface%20%7B)
@@ -171,7 +171,7 @@ The treasury receives the interest swept from the Accountant. In maintains a res
 #### [TreasuryInterfaces](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/Treasury/TreasuryInterfaces.sol#:~:text=contract%20TreasuryDelegatorStorage%20%7B) (27 sloc)
 - Interfaces that both TreasuryDelegat(e/or) implement. Any future implementations of TreasuryDelegate must extend the TreasuryDelegate contract, and should define added functionality as an interface in this file.
 
-#### [CNote](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/CNote.sol#:~:text=contract%20CNote%20is%20CErc20Delegate%20%7B) 
+#### [CNote](https://github.com/Plex-Engineer/lending-market/blob/755424c1f9ab3f9f0408443e6606f94e4f08a990/contracts/CNote.sol#:~:text=contract%20CNote%20is%20CErc20Delegate%20%7B) (75 sloc):
 - CNote extends the CErc20Delegate base contract. It is the Lending Market for Note.
 - The mintFresh/redeemFresh, borrowFresh/repayBorrowFresh internal methods in CToken.sol are overridden here to implement the calls for Accountant to mint() or redeem() Note from the lending market when external users remove or deposit Note into the lending market as described above.
 
