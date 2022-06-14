@@ -143,7 +143,7 @@ The Lending Market is a decentralized money market forked from Compound protocol
 - **IMPORTANT: The internal price in the lending market used to calculate liquidity for Note is always set to 1 USD regardless of the value of Note in the Dex.**
 - Our implementation of this architecture is described below
 
-![flowchart](./flowchart.png)
+![flowchart](https://github.com/code-423n4/2022-06-newblockchain/blob/main/flowchart.png)
 
 ### Accountant:
 
