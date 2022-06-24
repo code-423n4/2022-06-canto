@@ -1,5 +1,5 @@
 # New Blockchain contest details
-- $45,000 USDC + $45,000 protocol tokens main award pot
+- $47,500 USDC + $47,500 protocol tokens main award pot
 - $2,500 USDC + $2,500 protocol tokens gas optimization award pot
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2022-06-new-blockchain-contest/submit)
