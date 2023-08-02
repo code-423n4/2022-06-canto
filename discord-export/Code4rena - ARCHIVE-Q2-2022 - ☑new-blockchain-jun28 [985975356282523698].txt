@@ -1,0 +1,1051 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q2-2022 / ☑new-blockchain-jun28
+==============================================================
+
+[06/13/2022 6:40 PM] kartoonjoy
+👋 Hello and welcome to the contest channel for the $100K (half USDC, half protocol tokens) **New Blockchain** contest!
+
+📆 Contest opens 06/14/2022 8:00 PM (20:00 UTC) and runs through 06/21/2022 7:59 PM (19:59 UTC) (7 days).
+
+Please give a warm welcome to the team, particularly @chicagoguy and @ampingle, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-06-new-blockchain-contest
+
+{Embed}
+https://code4rena.com/contests/2022-06-new-blockchain-contest
+Code4rena New Blockchain contest
+$100,000 (half USDC, half protocol tokens)
+14 June 2022—21 June 2022
+Code4rena - ARCHIVE-Q2-2022 - ☑new-blockchain-jun28 [985975356282523698].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+🔥 (2) 
+
+[06/13/2022 7:17 PM] chicagoguy#9197
+Hi all it's very nice to meet you. Excited to hear your thoughts and answer your questions regarding our project! This is our first time using C4 so if you have any suggestions on improving documentation/organization we would love to hear them.
+
+{Reactions}
+hi5 (13) 
+
+[06/14/2022 9:16 PM] 100proof
+I'd love to know as much as possible about the new design of your blockchain, and not just because it will help with auditing. It just sounds interesting in general!
+
+
+[06/14/2022 9:18 PM] 100proof
+For instance, what do you mean by free liquidity? Probably that means no fees, but any other connotations?
+
+
+[06/14/2022 9:20 PM] 100proof
+And how is free liquidity connected to the notion of a new blockchain? Isn't it an independent concept? i.e. what stops someone making a smart contract that swaps tokens for no fees on an existing chain?
+
+{Reactions}
+💯 (2) 
+
+[06/14/2022 9:20 PM] 100proof
+I'm sure I'm asking silly questions. Just asking because the details are a bit thin in the contest documentation
+
+
+[06/15/2022 1:09 AM] scott_lew_is
+@100proof free =  zero LP fees, zero rake on the lending protocol
+
+core defi primitives on “new blockchain” are free public infrastructure. dexes as we know them on ethereum are sorta like greyhound buses. privately transporting folks to make a proft. core dexes on “new blockchain” are more like a public subway system (with free tickets). liquidity is paid for by the layer 1 protocol and offered free to all traders, users and other protocols.
+
+{Reactions}
+👍 (3) 🤯 (2) 
+
+[06/15/2022 1:11 AM] scott_lew_is
+nothing would stop people from deploying a no fee dex on another chain, just liked nothing would stop me from building a public subway system in nashville. just im not sure why i would do that.
+
+{Reactions}
+😅 😂 
+
+[06/15/2022 3:00 AM] chicagoguy#9197
+@100proof Adding on to what Scott said, this public infrastructure is paid for by incentives in the form of wrapped native tokens provided using the flywheel mechanism (reservoir and comptroller contracts) in the lending market
+
+
+[06/15/2022 4:23 AM] 100proof
+This is all very good information. Thanks!
+
+
+[06/15/2022 6:05 AM] 100proof
+@chicagoguy  I'd like to know more about the Rent Extraction Resistance property you want to have for New Blockchain. In practice, how do you enforce this? When the Internet first started it was this wonderful place full of open protocols but over time things got built on top of those open protocols that people came to depend on, and the rents are just extracted from that. I mean IRC was a pretty good chat program - completely open standards - but are we using it still? And there are a "million" different chat applications - WhatsApp, Signal, Telegram, etc. with very little interoperability. The problem of rent extraction - or even just interop/compatibility - is a very hard one to solve I think.
+
+
+[06/15/2022 11:55 AM] 0x1f8b
+>  git clone --recurse-submodules https://github.com/code-423n4/2022-06-newblockchain.git
+Receive the error with 'lending-market':
+> error: invalid path 'contracts/Accountant/README.md '
+> Submodule path 'manifest': checked out '688e9b4e7835854c22ef44b045d6d226b784b4b8'
+> Submodule path 'stableswap': checked out '489d010eb99a0885139b2d5ed5a2d826838cc5f9'
+> Submodule path 'zeroswap': checked out '03507a80322112f4f3c723fc68bed0f138702836'
+> fatal: Unable to checkout 'ab31a612be354e252d72faead63d86b844172761' in submodule path 'lending-market'
+Anyone else?
+
+
+[06/15/2022 4:01 PM] scott_lew_is
+@100proof ill explain more on this later. tbh, it is kinda out of scope for the c4 contest. the tl;dr is that vertical monopolies that run from onchain primitive to user facing interface are anti-competitive (just like how  Standard Oil controlled oil drilling, oil transport and retail gas stations before US antitrust movement made laws that allowed it to be broken up)
+
+
+[06/15/2022 4:02 PM] scott_lew_is
+but by making the low level primitive Free Public Infrastructure and not developing a canonical swapping interface it is (in my opinion) implausible that vertical monopolies will emerge like we have seen elsewhere.
+
+{Reactions}
+💜 
+
+[06/15/2022 8:55 PM] 100proof
+Thanks for pointing out that my question was out-of-scope. My apologies. I'll take any further discussion offline.
+
+
+[06/15/2022 10:55 PM] abhinavmir#1898
+I am getting an error when doing a yarn install on ZeroSwap root. Any idea what this is about? @chicagoguy @ampingle 
+```
+Arguments: ls-remote --tags --heads ssh://git@github.com/web3-js/scrypt-shim.git
+Directory: /Users/.../Desktop/Code/zeroswap
+Output:
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+```
+
+
+[06/16/2022 1:45 AM] t_k___
+@abhinavmir / evmsecurity.org hmmm not sure why that's occurring. Have you tried pulling each submodule individually? Technically, there is no reason you need to pull all of them at once. We just did that so we could push changes in a modular way
+
+edit: cloning* not pulling
+
+
+[06/16/2022 1:46 AM] t_k___
+I would also recommend cloning the modules individually instead of through the main repo. Seems that some people are having issues with that. Will try to figure out ASAP.
+
+
+[06/16/2022 9:57 PM] dmitriia
+git submodule init
+git submodule update --recursive
+
+{Reactions}
+thankyou 
+
+[06/18/2022 1:13 AM] abhinavmir#1898
+yep, still happens 😦 all cool tho, will figure it out
+
+
+[06/18/2022 1:14 AM] abhinavmir#1898
+`BaseV1Router01` is in scope? @kt_nowk
+
+
+[06/18/2022 6:05 AM] t_k___
+Yep, all of BaseV1-periphery.sol is in scope
+
+
+[06/19/2022 5:11 PM] csanuragjain
+@chicagoguy I have DMed you a query. Kindly have a look as per your convenience
+
+
+[06/19/2022 8:08 PM] chicagoguy#9197
+@csanuragjain ok sounds good getting back to you now
+
+{Reactions}
+👍 
+
+[06/20/2022 2:10 PM] Wayne#7117
+@kt_nowk please check my DM,
+
+
+[06/20/2022 6:45 PM] hake_stake
+@chicagoguy  have DMed you a query. Kindly have a look as per your convenience +1 🙂
+
+
+[06/20/2022 8:04 PM] chicagoguy#9197
+@hake | SmartSek Just responded
+
+{Reactions}
+❤️ 
+
+[06/21/2022 4:50 AM] samruna
+``Please make sure you have the correct access rights
+and the repository exists.
+fatal: clone of 'git@github.com:Plex-Engineer/zeroswap.git' into submodule path '......' 
+failed
+Failed to clone 'zeroswap'. Retry scheduled
+Cloning into '.....'...
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+`` Getting this error
+
+
+[06/21/2022 4:38 PM] rotcivegaf
+please, more time!
+
+{Reactions}
+➕ (2) 
+
+[06/21/2022 6:10 PM] Wayne#7117
+What is the scope of the lending-market?
+
+
+[06/21/2022 6:10 PM] Wayne#7117
+Can anyone answer me?
+
+
+[06/21/2022 6:11 PM] kartoonjoy
+@chicagoguy, @kt_nowk
+
+
+[06/21/2022 6:51 PM] t_k___
+@Wayne responded to your DM from earlier!
+
+{Reactions}
+thankyou 
+
+[06/21/2022 7:26 PM] acegawd
+DM @kt_nowk
+
+{Reactions}
+👍 
+
+[06/21/2022 8:02 PM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **New Blockchain** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: the team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+
+[06/21/2022 8:38 PM] cryptphi
+i tried submitting a finding just seconds before deadline (I had already clicked Submit button), but got bumped due to internet connection
+
+{Reactions}
+😞 (7) 
+
+[06/21/2022 8:55 PM] chicagoguy#9197
+@kartoonjoy | C4 🎇🎇 would it be possible for cryptphi to send us his finding?
+
+
+[06/21/2022 9:01 PM] cloudellie
+:empathy: The worst! Please send it to submissions@code423n4.com and we'll pass it along to the sponsor.
+
+
+[06/21/2022 9:03 PM] cryptphi
+thanks, did that. I had to rewrite the submission all over again. Was even sweating buckets cause I felt it may not get accepted, but I still sent the email
+
+{Reactions}
+thankyou 
+
+[06/21/2022 9:03 PM] cloudellie
+Thanks - we'll have a look ASAP
+
+{Reactions}
+thankyou 
+
+[06/21/2022 9:04 PM] cloudellie
+Lots of contests closing/launching today so please don't worry if it takes us a bit to get to it.
+
+
+[06/21/2022 9:04 PM] cryptphi
+Sure, no worries
+
+{Reactions}
+hi5 (2) 
+
+[06/23/2022 10:12 PM] kartoonjoy
+👋 Hello and welcome back to the contest channel for the $25K USDC **New Blockchain v2** contest!
+
+📆 Contest opens 06/28/2022 8:00 PM (20:00 UTC) and runs through 07/01/2022 8:00 PM (20:00 UTC) (3 days).
+
+Please give a warm welcome to the New Blockchain team, particularly @chicagoguy, @ampingle, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-06-new-blockchain-v2-contest
+
+{Embed}
+https://code4rena.com/contests/2022-06-new-blockchain-v2-contest
+Code4rena New Blockchain v2 contest
+$25,000 USDC
+28 June 2022—1 July 2022
+Code4rena - ARCHIVE-Q2-2022 - ☑new-blockchain-jun28 [985975356282523698].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+hi5 (5) Axelarroket 
+
+[06/23/2022 10:29 PM] hake_stake
+That was super quick! Is this v2 corrections of the past audit already or what?
+
+
+[06/24/2022 2:25 AM] chomtana
+OMG that is extremely fast
+
+
+[06/24/2022 3:36 AM] exd0tpy
+Wow super fast!
+
+
+[06/24/2022 3:58 PM] cloudellie
+My understanding (though please don't hold me to this) is that this will be a review of the mitigations made based on findings in the recent contest.
+
+{Reactions}
+❤️ 
+
+[06/24/2022 4:30 PM] hake_stake
+I will hold you to this. (Thank you)
+
+{Reactions}
+😂 (5) hi5 
+
+[06/24/2022 10:38 PM] 0x1f8b
+I'm a bit confused, without ends the review of the previous one, how will start the next one? There are QA and gas issues without any review in github
+
+
+[06/24/2022 10:39 PM] 0x1f8b
+It will be a different code?
+
+
+[06/26/2022 2:11 PM] JohnSmith#1623
+Do I need to read everything about first contest or new contest is not related much to the old one?
+
+
+[06/26/2022 2:12 PM] JohnSmith#1623
+Reading thousands lines of code from first contest just for this 3 day contest will not be fun.
+
+
+[06/26/2022 2:36 PM] cryptphi
+each contest has a scope....guess you'd have to wait till the new contest start before getting the scope.
+
+
+[06/26/2022 2:37 PM] cryptphi
+we'll be able to ask the right questions by then it seems.
+
+{Reactions}
+💯 
+
+[06/28/2022 8:26 PM] peritoflores#0011
+Hi, just an error with cloning the repo.
+
+
+[06/28/2022 8:26 PM] peritoflores#0011
+fatal: Unable to checkout 'ea5840de72eab58bec837bb51986ac73712fcfde' in submodule path 'lending-market-v2'
+
+
+[06/28/2022 8:30 PM] 100proof
+There seems to be a small typo on the contest page.
+
+```
+git --recurse-submodules "https://github.com/code-423n4/2022-06-NewBlockchain-v2.git"
+```
+
+should be
+
+```
+git clone --recurse-submodules "https://github.com/code-423n4/2022-06-NewBlockchain-v2.git"
+```
+
+
+[06/28/2022 8:31 PM] cryptphi
+yep.... that will clone it all easily for you
+
+
+[06/28/2022 8:32 PM] t_k___
+Thanks for letting us know! Pushing a change now
+
+
+[06/28/2022 8:35 PM] t_k___
+Have you tried using  `git clone --recurse-submodules "https://github.com/code-423n4/2022-06-NewBlockchain-v2.git"`
+
+
+[06/28/2022 8:41 PM] peritoflores#0011
+yes yes but still unable to clone "lending-market-v2" submodule
+
+
+[06/28/2022 8:44 PM] cryptphi
+that's weird, worked easily for me. can you try it in a different directory?
+
+
+[06/28/2022 8:48 PM] cryptphi
+For this new contest, what actually is the scope? Because right now I'm looking at bunch of files which feels like I'm repeating the whole process I went through in the previous contest
+
+
+[06/28/2022 8:50 PM] cryptphi
+looks like I'm re-iterating what John posted few days ago
+
+
+[06/28/2022 9:06 PM] chicagoguy#9197
+@cryptphi So the scope is technically all of the code that is specified in the contest scope section. This is a cleanup audit for the prior codebase which we fixed up after the initial audit.
+
+
+[06/29/2022 2:40 AM] chomtana
+Can you provide diff
+
+
+[06/29/2022 3:51 AM] hellocccz
+I wonder if issues that were confirmed but not fixed in v1 will be considered ?
+
+
+[06/29/2022 3:59 AM] 100proof
+I just read through the README and added up the SLOC of all the in-scope contracts. It came to 3074 SLOC. Am I reading this correct? That seems very high for a 3-day $25K contest.
+
+
+[06/29/2022 4:08 AM] chomtana
+This mean certified plus can just copy and paste these issues if it can be considered
+
+
+[06/29/2022 4:47 AM] hellocccz
+Yes, so I don't think these should be considered
+
+
+[06/29/2022 4:48 AM] hellocccz
+But just to avoid fomo, I want to make sure
+
+
+[06/29/2022 5:42 AM] thepicodes
+I guess if they are not fixed it means they didn't consider them valid ? Weird though, they didn't wait for judging to go for a second audit
+
+
+[06/29/2022 6:04 AM] thepicodes
+Wouldn't it be wiser to only do this contest after the first one is judged ? Unless the sponsor is in a rush
+
+
+[06/29/2022 7:52 AM] ajtra#5030
+hi I have the following issue when i clone the project
+
+
+[06/29/2022 7:53 AM] ajtra#5030
+error: invalid path 'contracts/README.md '
+Submodule path 'manifest-v2': checked out 'f6ebfe679973edf4f64832e64480ff5250ef8486'
+Unable to checkout 'ea5840de72eab58bec837bb51986ac73712fcfde' in submodule path 'lending-market-v2'
+
+
+[06/29/2022 7:53 AM] ajtra#5030
+anyone has the same problem?
+
+
+[06/29/2022 10:21 AM] 0x1f8b
+Same here
+
+
+[06/29/2022 10:21 AM] 0x1f8b
+> PS C:\Temporal> git clone --recurse-submodules "https://github.com/code-423n4/2022-06-NewBlockchain-v2.git"
+> Cloning into '2022-06-NewBlockchain-v2'...
+> remote: Enumerating objects: 97, done.
+> remote: Counting objects: 100% (97/97), done.
+> Receiving objects:  34% (33/97)0% (83/83), done.
+> Receiving objects: 100% (97/97), 221.46 KiB | 1.94 MiB/s, done.0
+> 
+> Resolving deltas: 100% (51/51), done.
+> Submodule 'lending-market-v2' (https://github.com/Plex-Engineer/lending-market-v2.git) registered for path 'lending-market-v2'
+> Submodule 'manifest-v2' (https://github.com/Plex-Engineer/manifest-v2.git) registered for path 'manifest-v2'
+> Cloning into 'C:/Temporal/2022-06-NewBlockchain-v2/lending-market-v2'...
+> remote: Enumerating objects: 617, done.
+> remote: Counting objects: 100% (617/617), done.
+> remote: Compressing objects: 100% (466/466), done.
+> remote: Total 617 (delta 136), reused 611 (delta 131), pack-reused 0
+> Receiving objects: 100% (617/617), 2.20 MiB | 7.07 MiB/s, done.
+> Resolving deltas: 100% (136/136), done.
+> Cloning into 'C:/Temporal/2022-06-NewBlockchain-v2/manifest-v2'...
+> remote: Enumerating objects: 1023, done.
+> remote: Counting objects: 100% (1023/1023), done.
+> remote: Compressing objects: 100% (730/730), done.
+> remote: Total 1023 (delta 180), reused 1023 (delta 180), pack-reused 0
+> Receiving objects: 100% (1023/1023), 9.89 MiB | 12.29 MiB/s, done.
+> Resolving deltas: 100% (180/180), done.
+> error: invalid path 'contracts/README.md '
+> Submodule path 'manifest-v2': checked out 'f6ebfe679973edf4f64832e64480ff5250ef8486'
+> fatal: Unable to checkout 'ea5840de72eab58bec837bb51986ac73712fcfde' in submodule path 'lending-market-v2'
+
+
+[06/29/2022 10:31 AM] road220
+guys, do you think that for gas reports it's important to include only smth within the scope or we can write down some suggestions for other parts as well?
+I mean, it's a bit strange to optimize only half of project...
+
+
+[06/29/2022 10:33 AM] JohnSmith#1623
+generally, you can do whatever you want, but your work will be compensated only within scope
+
+
+[06/29/2022 10:35 AM] road220
+that's completely fair for bug findings and etc, but for gas optimizations - idk...
+
+
+[06/29/2022 10:57 AM] illilli000
+it's a lot more work for judges to filter out out of scope findings. If you really think you should include them, they should be clearly marked as out of scope for the judge
+
+{Reactions}
+💯 thankyou 
+
+[06/30/2022 7:08 PM] chicagoguy#9197
+No they are not being considered as we fixed all issues that we believed were valid before submitting for this clean up audit
+
+
+[06/30/2022 7:09 PM] chicagoguy#9197
+We are still working with the judges to award all the findings currently
+
+
+[06/30/2022 7:10 PM] chicagoguy#9197
+Agreed it isn't ideal to launch another audit so soon after but we are in a bit of a rush
+
+
+[06/30/2022 7:11 PM] t_k___
+Have you tried cloning recursively using `git clone --recurse-submodules`?
+
+
+[06/30/2022 7:12 PM] t_k___
+If not, it's also totally okay to just clone each sub repo individually.
+
+
+[07/01/2022 9:15 AM] .chandr
+Hello! Yesterday I ran into a problem. When I tried to send a report, the site told me try again next time, in the end I sent the report three times, I hope this will not create difficulties for anyone
+
+
+[07/01/2022 12:51 PM] utocif
+Hi, should not the contest be over now?
+
+
+[07/01/2022 5:15 PM] itsmetechjay (pinned)
+Important update:   Because of some challenges with Warden Auth affecting some wardens abilities to submit findings, we're extending the submission deadline for this contest by 24 hours.  
+
+See Sock's note here: https://discord.com/channels/810916927919620096/991414579206828193/992436196527583332
+
+{Reactions}
+👍 ❤️ 
+
+[07/01/2022 6:05 PM] hake_stake
+Suggest pinning this just in case it gets lost in more comments like this one
+
+
+[07/01/2022 6:06 PM] itsmetechjay
+Pinned a message.
+
+
+[07/01/2022 6:06 PM] itsmetechjay
+Did you mean here? Or Sock's note?
+
+
+[07/01/2022 6:06 PM] itsmetechjay
+orrrr both? 😄
+
+{Reactions}
+😂 
+
+[07/01/2022 6:58 PM] JohnSmith#1623
+re-registration took me like half an hour, so issue is present, but it is not that bad
+
+{Reactions}
+thankyou 
+
+[07/01/2022 7:01 PM] kartoonjoy
+are you good now John?
+
+
+[07/01/2022 7:04 PM] JohnSmith#1623
+yeah, already submitted everything I wanted
+
+
+[07/01/2022 7:04 PM] kartoonjoy
+glad to hear that!
+
+
+[07/01/2022 7:05 PM] JohnSmith#1623
+everything works like clockwork
+
+{Reactions}
+nice 🎉 
+
+[07/01/2022 9:49 PM] hake_stake
+hmmmm both?
+
+
+[07/01/2022 9:52 PM] itsmetechjay
+done! ty
+
+{Reactions}
+❤️ 
+
+[07/01/2022 9:53 PM] hake_stake
+Also thank you for merging my PR some hours ago 🙂
+
+{Reactions}
+💜 
+
+[07/01/2022 9:56 PM] itsmetechjay
+my pleasure 🙂
+
+
+[07/02/2022 8:02 PM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **New Blockchain v2** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: the **New Blockchain** team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+
+[07/12/2022 11:24 PM] rotcivegaf
+this contest change the name?
+
+
+[07/12/2022 11:28 PM] rotcivegaf
+now is https://code4rena.com/contests/2022-06-canto-contest and https://code4rena.com/contests/2022-06-canto-v2-contest ???
+
+{Embed}
+https://code4rena.com/contests/2022-06-canto-contest
+Code4rena Canto contest
+$100,000 (half USDC, half protocol tokens)
+14 June 2022—21 June 2022
+Code4rena - ARCHIVE-Q2-2022 - ☑new-blockchain-jun28 [985975356282523698].txt_Files/c3643390-ad8d-4c5a-acdd-c6789d1cf756-38769
+
+{Embed}
+https://code4rena.com/contests/2022-06-canto-v2-contest
+Code4rena Canto v2 contest
+$25,000 USDC
+28 June 2022—2 July 2022
+Code4rena - ARCHIVE-Q2-2022 - ☑new-blockchain-jun28 [985975356282523698].txt_Files/48db8302-ff80-4a3f-b2a3-dd57738671cc-C5757
+
+
+[07/12/2022 11:28 PM] cloudellie
+correct
+
+{Reactions}
+👍 
+
+[07/19/2022 3:33 PM] utocif
+Hi, do you know when we will have the results approx?
+
+{Reactions}
+🧐 (5) 
+
+[08/01/2022 4:52 PM] rohan16
+hi what about the awarding
+
+{Reactions}
+👍 
+
+[08/12/2022 12:17 PM] utocif
+it's been a long time ... @Jay | C4
+
+{Reactions}
+☝️ 
+
+[08/12/2022 1:12 PM] itsmetechjay
+The judge is working hard to wrap up this and the v2 one soon!  Thank you for your patience.
+
+
+[08/16/2022 9:49 AM] rohan16
+@Jay | C4  HI JAY it is taking a lot time any further info that by how many days we would be able to see our golden names in this contest result 😅😅
+
+{Reactions}
+same (2) 
+
+[08/16/2022 1:01 PM] itsmetechjay
+I don't have an ETA just yet but the judge is working on it 🙂
+
+
+[08/17/2022 8:05 PM] technicallyty
+did the results/awards for v1 ever posted?
+
+
+[08/17/2022 8:22 PM] alextheentreprenerd
+Last 2 days of triage before we finish judging
+
+
+[08/19/2022 4:07 PM] rohan16
+by what day can we see the results??
+
+
+[08/19/2022 7:30 PM] alextheentreprenerd
+Triage finished today, so very soon
+
+{Reactions}
+thankyou (4) 
+
+[08/30/2022 4:10 PM] Ignacio#9604
+any update?
+
+
+[08/30/2022 4:21 PM] itsmetechjay
+We are working on calculating and verifying awards this week.
+
+
+[08/31/2022 4:03 PM] itsmetechjay
+🤑 🎉 USDC Awards for **New Blockchain/Canto**:
+
+*Note: Token awards for this contest will be distributed at a later date, once C4 has received the tokens from the sponsor.*
+
+$8,318.82 USDC » WatchPug (@JtP | WATCHPUG, @Ming | WATCHPUG)
+$5,805.76 USDC » @cccz 
+$3,884.47 USDC » @hake | SmartSek 
+$2,602.93 USDC » @Ruhum 
+$2,218.03 USDC » 0xf15ers (@remora0, @twojoy)
+$2,146.63 USDC » @Picodes | Angle 
+$2,029.01 USDC » @cryptphi 
+$1,920.76 USDC » @hansfriese 
+$1,738.64 USDC » @Chom 
+$1,567.23 USDC » p4st13r4 (@0x69e8, @0xb4bb4)
+$1,192.52 USDC » @Tutturu 
+$1,131.63 USDC » @gzeon 
+$1,086.70 USDC » @0x52 - Away Until 8/9 
+$1,064.38 USDC » @codexploder 
+$1,001.03 USDC » @zzzitron 
+$944.72 USDC » @hyh 
+$893.99 USDC » @0x1f8b 
+$844.34 USDC » @csanuragjain 
+$776.42 USDC » @joestakey 
+$768.58 USDC » @Soosh 
+$758.87 USDC » @TerrierLover 
+$564.66 USDC » @DefSec 
+$541.90 USDC » @catchup 
+$485.93 USDC » @Dravee 
+$460.62 USDC » @_Adam 
+$427.91 USDC » @Roman 
+$395.58 USDC » @Django | Saloon Finance 
+$361.15 USDC » @saian 
+$359.71 USDC » @0xmint 
+$338.60 USDC » @thinklab 
+$338.48 USDC » @0xNazgul 
+$330.29 USDC » @robee 
+$247.58 USDC » @dipp 
+$238.39 USDC » k
+$198.74 USDC » @JMukesh 
+$131.21 USDC » @TomJ 
+$129.51 USDC » @Limbooo 
+$119.53 USDC » @Waze 
+$117.74 USDC » @0xKitsune 
+$116.64 USDC » @Funen 
+$115.54 USDC » @sach1r0 
+$114.32 USDC » @simon135 
+$113.82 USDC » @fatherOfBlocks 
+$113.72 USDC » 0x29A (@anon, @Rotcivegaf)
+$113.65 USDC » @c3phas 
+$112.13 USDC » @madwookie 
+$101.88 USDC » @Bronicle 
+$72.73 USDC » @Sloth 
+$72.46 USDC » @technicallyty 
+$72.40 USDC » @bvttplvg 
+$72.40 USDC » @Ignacio 
+$41.26 USDC » @0xkatana 
+$41.26 USDC » @JC
+$41.26 USDC » @rfa 
+$41.26 USDC » @Tomio 
+$41.26 USDC » @ynnad 
+$39.67 USDC » @0v3rf10w 
+$39.67 USDC » @ak1 
+$39.67 USDC » @Fitraldys 
+
+🏁 Findings summary
+---------------------------
+High risk findings: 70 total, 14 unique
+Med risk findings: 18 total, 12 unique
+Gas optimization reports: 39
+QA reports: 45
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations all! 💸 💸 💸
+
+{Reactions}
+C4Keycap (4) 
+
+[08/31/2022 4:37 PM] rohan16
+When results of  v2 will be released??
+
+
+[08/31/2022 8:11 PM] hake_stake
+Does this amount include both USDC + $CANTO or is it just the USDC part?
+
+
+[08/31/2022 8:51 PM] TurnipBoy#5973
+Only USDC
+
+{Reactions}
+👍🏽 
+
+[09/01/2022 3:30 PM] itsmetechjay
+🤑 🎉 Awards for **New Blockchain/Canto v2**:
+
+$3,313.85 USDC » @Picodes | Angle 
+$2,933.74 USDC » @0x1f8b 
+$2,842.76 USDC » @ladboy233小伙子 
+$2,752.30 USDC » @__141345__ 
+$2,274.77 USDC » @Roman 
+$2,148.09 USDC » @Critical 
+$1,455.65 USDC » @Chom 
+$1,207.80 USDC » @zzzitron 
+$1,190.06 USDC » @cccz 
+$1,114.54 USDC » @thinklab 
+$799.81 USDC » @DefSec 
+$313.19 USDC » @csanuragjain 
+$313.19 USDC » @0x52 - Away Until 8/9 
+$207.60 USDC » @TomJ 
+$170.23 USDC » @rfa 
+$141.44 USDC » @Funen 
+$113.38 USDC » @Bnke 
+$107.37 USDC » 0x29A (@Rotcivegaf, @anon)
+$104.87 USDC » AlleyCat
+$97.84 USDC » @Meera 
+$85.95 USDC » @0xKitsune 
+$85.17 USDC » @c3phas 
+$70.56 USDC » @fatherOfBlocks 
+$70.47 USDC » @Soosh 
+$67.18 USDC » @TerrierLover 
+$65.98 USDC » @JC
+$65.27 USDC » @hake | SmartSek 
+$65.27 USDC » @ynnad 
+$65.03 USDC » @grGred 
+$64.94 USDC » @0xpathfindr 
+$64.90 USDC » @Sm4rty 
+$63.37 USDC » @aysha 
+$44.83 USDC » @slywaters 
+$44.17 USDC » @Ignacio 
+$43.47 USDC » @sach1r0 
+$43.47 USDC » @samruna 
+$43.14 USDC » @0v3rf10w 
+$43.14 USDC » @Sloth 
+$43.14 USDC » @Limbooo 
+$35.71 USDC » @Tomio 
+$23.95 USDC » @m_Rassska 
+$23.95 USDC » @Waze 
+$21.80 USDC » @0xArshia 
+$21.80 USDC » @ajtra 
+$21.80 USDC » @cRat1st0s 
+$21.80 USDC » @durianSausage 
+$21.80 USDC » @Fitraldys 
+$21.80 USDC » @Noah3o6 
+$21.80 USDC » @RedOneN 
+$21.80 USDC » @Rohan 
+
+🏁 Findings summary
+---------------------------
+High risk findings: 16 total, 8 unique
+Med risk findings: 12 total, 6 unique
+Gas optimization reports: 34
+QA reports: 34
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations all! 💸 💸 💸
+
+{Reactions}
+C4Keycap (14) 
+
+[09/01/2022 6:56 PM] cryptphi
+I totally bumped on v2 , all my findings were invalid 😅
+
+{Reactions}
+hi5 
+
+[09/01/2022 8:38 PM] alextheentreprenerd
+I commented the issues if you want to check the reasoning behind why I closed them as invalid
+
+I comment almost all findings, even the ones I close as invalid
+
+
+[09/01/2022 8:38 PM] alextheentreprenerd
+Maybe need to wait until report though, not sure
+
+
+[09/01/2022 9:33 PM] cryptphi
+Thanks, yeah I did see the comments. Just wasn't my week that period. ...was really a pleasant contest 👍🏾
+
+{Reactions}
+👍 
+
+[09/03/2022 10:08 AM] utocif
+Could you please send the link where you comment the issues please?
+
+
+[09/03/2022 10:11 AM] utocif
+I would like to see why mine was rejected :p
+
+
+[09/03/2022 2:40 PM] alextheentreprenerd
+Because you don't have backstage you will have to wait until the report is out, prob a month of so, will check and send you a note with my comment
+
+Note that all findings for all contests are made public when the report is published, just go on the Github for the contest
+
+
+[09/03/2022 2:40 PM] rohan16
+Even my qa report was rejected but I guess due the way I reported it was not up to the mark I felt
+
+
+[09/03/2022 2:52 PM] alextheentreprenerd
+Sent notes to both
+
+
+[09/03/2022 3:25 PM] Noah3o6#2496
+Where can you see if you findings were invalid?
+
+
+[09/03/2022 3:27 PM] alextheentreprenerd
+The Github Repo with all reports is made public once the report is published, if you have backstage tag you can see the reports earlier
+
+{Reactions}
+✅ 
+
+[09/04/2022 4:31 AM] thinklab
+need $CANTO rewards - need to mint my longnecks 😭
+
+
+[09/04/2022 9:24 AM] thinklab
+nvm I bridged and minted one already 😊
+
+
+[09/08/2022 12:45 PM] cloudellie
+**Important - re: award coin**
+
+Wardens: we made an error in how we listed the awards for this contest; it was supposed to be $12.5k USDC + $12.5k worth of Canto. Since we made an error, we'll give everyone 7 days to tell us if you want your award in USDC only.
+
+**If you prefer to be paid in USDC only, **please leave a comment in this thread to request that. ****
+
+**If you do not comment in this thread by September 15, 2022 1:00 PM, **we will send your awards as 50/50 USDC/Canto.****
+
+
+[09/19/2022 5:15 PM] Ignacio#9604
+any update?
+
+{Reactions}
+❗ 
+
+[09/21/2022 11:12 AM] 0xpathfindr
+Have rewards for this contest been distributed ?
+
+
+[09/22/2022 10:19 AM] 0xpathfindr
+@Ignacio did you receive awards for this contest ?
+
+
+[09/22/2022 10:21 AM] 0xpathfindr
+CC @CloudEllie | C4
+
+
+[09/22/2022 10:23 PM] Ignacio#9604
+only v1
+
+
+[09/22/2022 10:39 PM] itsmetechjay
+The team is working on getting the awards distributed for v2!
+
+
+[09/22/2022 10:43 PM] 0xpathfindr
+Thank you
+
+{Reactions}
+hi5 
+
+[09/22/2022 10:47 PM] zzzitron
+Are rewards in $CANTO also distributed for v1?
+
+
+[09/22/2022 10:48 PM] itsmetechjay
+We have not yet received those from the sponsor. We will announce and distribute those once that happens.
+
+{Reactions}
+thankyou 
+
+[09/26/2022 10:35 AM] cloudellie
+Yes, at least for those who requested it.
+
+
+[12/14/2022 4:55 PM] itsmetechjay
+🤑 🎉  CANTO Awards for **New Blockchain/Canto**:
+
+51749.43 CANTO » WatchPug (@JtP | WATCHPUG, @Ming | WATCHPUG)
+36182.85 CANTO » @cccz 
+23560.21 CANTO » @hake | SmartSek 
+16460.99 CANTO » @Ruhum 
+13794.08 CANTO » 0xf15ers (@remora0, @twojoy)
+13679.53 CANTO » @Picodes | Angle 
+12803.21 CANTO » @cryptphi 
+12158.53 CANTO » @hansfriese 
+10916.81 CANTO » @Chom 
+9704.23 CANTO » p4st13r4 (@0x69e8, @0xb4bb4)
+7622.75 CANTO » @Tutturu 
+6962.65 CANTO » @0x52 - Away Until 8/9 
+6745.60 CANTO » @codexploder 
+6400.47 CANTO » @gzeon 
+6197.68 CANTO » @zzzitron 
+6063.52 CANTO » @hyh 
+5547.19 CANTO » @0x1f8b 
+5421.09 CANTO » @csanuragjain 
+5061.62 CANTO » @TerrierLover 
+4758.98 CANTO » @Soosh 
+3810.84 CANTO » @DefSec 
+3734.51 CANTO » @catchup 
+2677.50 CANTO » @Django | Saloon Finance 
+2649.60 CANTO » @Roman 
+2617.90 CANTO » @0xmint 
+2292.14 CANTO » @saian 
+1867.20 CANTO  » k
+1867.20 CANTO » @thinklab 
+1532.98 CANTO » @dipp 
+1470.28 CANTO » @JMukesh 
+1084.91 CANTO » 0x29A (@anon, @Rotcivegaf)
+1084.91 CANTO » @0xNazgul 
+1084.91 CANTO » @c3phas 
+1084.91 CANTO » @Dravee 
+1084.91 CANTO » @fatherOfBlocks 
+1084.91 CANTO » @Funen 
+1084.91 CANTO » @joestakey 
+1084.91 CANTO » @Limbooo 
+1084.91 CANTO » @madwookie 
+1084.91 CANTO » @robee 
+1084.91 CANTO » @sach1r0 
+1084.91 CANTO » @simon135 
+1084.91 CANTO » @TomJ 
+1084.91 CANTO » @Waze 
+1084.91 CANTO » @_Adam 
+687.99 CANTO » @Sloth 
+687.99 CANTO » @Bronicle 
+687.99 CANTO » @technicallyty 
+687.99 CANTO » @bvttplvg 
+687.99 CANTO » @Ignacio 
+396.92 CANTO » @0v3rf10w 
+396.92 CANTO » @0xkatana 
+396.92 CANTO » @0xKitsune 
+396.92 CANTO » @ak1 
+396.92 CANTO » @Fitraldys 
+396.92 CANTO » @JC
+396.92 CANTO » @rfa
+396.92 CANTO » @Tomio 
+396.92 CANTO » @ynnad 
+
+***Note: Awards will be distributed on Canto, an EVM chain, once we have confirmed that your wallet supports it.  In the next day or two, we will add you to a Discord channel with more information.***
+
+{Reactions}
+🥳 (5) 
+
+[12/14/2022 5:20 PM] rotcivegaf
+NICE!!!
+
+{Reactions}
+💯 
+
+[12/14/2022 5:30 PM] Ignacio#9604
+https://www.coingecko.com/en/coins/canto
+
+{Embed}
+https://www.coingecko.com/en/coins/canto
+CANTO Price in USD: CANTO Live Price Chart & News | CoinGecko
+Updated 14 December 2022: Current price of CANTO is USD $0.143980 with a 24-hour trading volume of $1,248,592. CANTO price is down -2.1% in the last 24 hours.
+Code4rena - ARCHIVE-Q2-2022 - ☑new-blockchain-jun28 [985975356282523698].txt_Files/canto-network-FF7FF.png
+
+{Reactions}
+🙏 
+
+[12/14/2022 5:33 PM] itsmetechjay
+🤑 🎉  CANTO Awards for **New Blockchain/Canto v2**:
+
+3739.32 CANTO »  @zzzitron 
+3450.59 CANTO » @thinklab 
+324.68 CANTO » AlleyCat
+302.92 CANTO » @Meera 
+266.08 CANTO » @0xKitsune 
+207.99 CANTO » @TerrierLover 
+204.26 CANTO » @JC 
+196.18 CANTO » @aysha 
+133.55 CANTO » @Limbooo 
+110.54 CANTO » @Tomio 
+67.50 CANTO » @cRat1st0s 
+
+***Note: Awards will be distributed on Canto, an EVM chain, once we have confirmed that your wallet supports it.  In the next day or two, we will add you to a Discord channel with more information.***
+
+{Reactions}
+🥳 (3) 
+
+==============================================================
+Exported 152 message(s)
+==============================================================
